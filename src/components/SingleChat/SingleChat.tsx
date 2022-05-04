@@ -62,7 +62,7 @@ const SingleChat = ({
       };
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:5000/api/message/${selectedChat._id}`,
+        `https://mern-websocket-chat-app.herokuapp.com/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -93,7 +93,7 @@ const SingleChat = ({
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "http://localhost:5000/api/message",
+          "https://mern-websocket-chat-app.herokuapp.com/api/message",
           {
             content: newMessage,
             chatId: selectedChat,
@@ -202,7 +202,6 @@ const SingleChat = ({
             flexDir='column'
             justifyContent='flex-end'
             p={3}
-            // bg='#E8E8E8'
             w='100%'
             h='100%'
             boxShadow='md'
@@ -221,7 +220,6 @@ const SingleChat = ({
                 <ScrollableChat messages={messages} user={user} />
               </div>
             )}
-
             <FormControl
               onKeyDown={sendMessage}
               id='first-name'
@@ -229,9 +227,9 @@ const SingleChat = ({
               mt={3}>
               {istyping ? (
                 <div>
+                  {" "}
                   <Lottie
                     options={defaultOptions}
-                    // height={50}
                     width={70}
                     style={{ marginBottom: 15, marginLeft: 0 }}
                   />

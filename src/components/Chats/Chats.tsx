@@ -24,7 +24,7 @@ const Chats = ({
   chats: any;
   setChats: any;
 }) => {
-  const [loggedUser, setLoggedUser] = useState();
+  const [loggedUser, setLoggedUser] = useState("");
 
   const toast = useToast();
 
@@ -37,12 +37,11 @@ const Chats = ({
       };
 
       const { data } = await axios.get(
-        "http://localhost:5000/api/chat",
+        "https://mern-websocket-chat-app.herokuapp.com/api/chat",
         config
       );
-      if (data) {
-        setChats(data);
-      }
+
+      setChats(data);
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -116,18 +115,12 @@ const Chats = ({
           </Stack>
         ) : (
           <Stack>
-            <Skeleton height='45px' />
-            <Skeleton height='45px' />
-            <Skeleton height='45px' />
-            <Skeleton height='45px' />
-            <Skeleton height='45px' />
-            <Skeleton height='45px' />
-            <Skeleton height='45px' />
-            <Skeleton height='45px' />
-            <Skeleton height='45px' />
-            <Skeleton height='45px' />
-            <Skeleton height='45px' />
-            <Skeleton height='45px' />
+            <Skeleton height='45px' /> <Skeleton height='45px' />
+            <Skeleton height='45px' /> <Skeleton height='45px' />
+            <Skeleton height='45px' /> <Skeleton height='45px' />
+            <Skeleton height='45px' /> <Skeleton height='45px' />
+            <Skeleton height='45px' /> <Skeleton height='45px' />
+            <Skeleton height='45px' /> <Skeleton height='45px' />
           </Stack>
         )}
       </Box>

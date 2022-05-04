@@ -50,7 +50,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/user",
+        "https://mern-websocket-chat-app.herokuapp.com/api/user",
         {
           name,
           email,

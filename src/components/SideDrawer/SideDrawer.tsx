@@ -74,7 +74,7 @@ function SideDrawer({
       };
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/user?search=${search}`,
+        `https://mern-websocket-chat-app.herokuapp.com/api/user?search=${search}`,
         config
       );
 
@@ -104,7 +104,7 @@ function SideDrawer({
         },
       };
       const { data } = await axios.post(
-        `http://localhost:5000/api/chat`,
+        `https://mern-websocket-chat-app.herokuapp.com/api/chat`,
         { userId },
         config
       );

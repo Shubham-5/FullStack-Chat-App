@@ -30,8 +30,6 @@ const Login = () => {
       setLoading(false);
       return;
     }
-
-    // console.log(email, password);
     try {
       const config = {
         headers: {
@@ -40,12 +38,10 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        "/api/user/login",
+        "https://mern-websocket-chat-app.herokuapp.com/api/user/login",
         { email, password },
         config
       );
-
-      // console.log(JSON.stringify(data));
       toast({
         title: "Login Successful",
         status: "success",
@@ -53,6 +49,7 @@ const Login = () => {
         isClosable: true,
         position: "bottom",
       });
+
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
       history("/chat");
