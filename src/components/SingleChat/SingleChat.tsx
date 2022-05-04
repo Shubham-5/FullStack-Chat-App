@@ -11,7 +11,7 @@ import ScrollableChat from "../ScrollableChat";
 import animationData from "../TypingAnimation.json";
 import Lottie from "react-lottie";
 import io from "socket.io-client";
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://mern-websocket-chat-app.herokuapp.com";
 
 var socket: any, selectedChatCompare: any;
 
